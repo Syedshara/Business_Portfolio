@@ -1,19 +1,51 @@
 import { motion } from "framer-motion";
-
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navigation from "../components/Navigation";
 import Sec1 from "../components/sections/Sec1";
 import Sec2 from "../components/sections/Sec2";
-import img from "../assets/bg.jpg";
+import img from "../assets/bg2.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Portfolio() {
+    const heroRef = useRef(null);
+
+    useEffect(() => {
+        gsap.from(".section", {
+            opacity: 0,
+            y: 50,
+            duration: 0.9,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: ".section",
+                start: "top 80%",
+                toggleActions: "play none none reverse",
+            },
+        });
+
+        gsap.to(heroRef.current, {
+            yPercent: -20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+            },
+        });
+
+    }, []);
+
     const sentence = "Material Kit 3";
+
     return (
         <div className="relative min-h-screen bg-slate-200">
             <div>
                 <Navigation />
-                <div className="h-[600px] bg-cover bg-center pt-4 relative z-0" style={{ backgroundImage: `url(${img})` }} >
-                    <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
+                <div ref={heroRef} className="h-[600px] bg-cover bg-center pt-4 relative z-0" style={{ backgroundImage: `url(${img})` }}>
+                    <div className="absolute inset-0 bg-black opacity-60 z-10"></div>
                     <header className="w-full h-full text-center text-white relative z-20 flex flex-col justify-center items-center">
                         <h1 className="text-6xl font-bold">
                             {sentence.split("").map((char, index) => (
@@ -46,8 +78,6 @@ export default function Portfolio() {
                 </div>
 
                 <section className="w-full max-w-[95vw] mx-auto -mt-20 py-12 px-10 bg-white rounded-lg shadow-xl shadow-slate-200 relative z-20">
-
-
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +96,6 @@ export default function Portfolio() {
                     >
                         <Sec2 />
                     </motion.div>
-
                 </section>
             </div>
         </div>
