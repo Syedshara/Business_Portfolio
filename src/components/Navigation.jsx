@@ -12,7 +12,7 @@ const Navigation = () => {
     };
 
     return (
-        <nav className={`max-w-lg md:max-w-3xl lg:max-w-7xl lg:mx-20  mx-auto rounded-xl bg-white py-2 px-4 flex justify-between items-center lg:bg-opacity-95 mt-3 transition-all duration-300 fixed z-50 top-0 left-0 right-0 shadow-lg ${isOpen == true ? "rounded-b-none" : ""} `}>
+        <nav className={`max-w-md md:max-w-3xl lg:max-w-7xl lg:mx-20  mx-auto rounded-xl bg-white py-2 px-4 flex justify-between items-center lg:bg-opacity-95 mt-3 transition-all duration-300 fixed z-50 top-0 left-0 right-0 shadow-lg ${isOpen == true ? "rounded-b-none" : ""} `}>
             <h1 className="md:text-md text-md font-medium px-2">Material Kit 3</h1>
 
             {/* Desktop Navigation */}
