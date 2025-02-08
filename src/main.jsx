@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 function SmoothScroll({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.5,
+      duration: 0.3,
       easing: (t) => 1 - Math.pow(1 - t, 3), // Smooth cubic easing
       smooth: true,
     });
