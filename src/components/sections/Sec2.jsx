@@ -4,7 +4,7 @@ import Flip from '../Flip';
 const Sec2 = () => {
 
     return (
-        <div className="max-w-5xl mx-auto mt-36 grid grid-cols-1 md:grid-cols-2 gap-0 items-center justify-center">
+        <div className="max-w-5xl mx-auto mt-36 mb-24 grid grid-cols-1 md:grid-cols-2 gap-0 items-center justify-center">
 
             <Flip />
 
