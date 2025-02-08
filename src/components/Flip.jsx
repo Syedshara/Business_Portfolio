@@ -4,13 +4,13 @@ const Flip = () => {
     const url2 = "https://images.pexels.com/photos/1367105/pexels-photo-1367105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
     const url3 = "https://images.pexels.com/photos/1559402/pexels-photo-1559402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
     return (
-        <div className="group h-72 w-72 md:w-96 md:h-96 md:ml-10 [perspective:1000px]">
+        <div className="group h-72 w-72 md:w-96  md:h-96  [perspective:1000px]">
             <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
 
-                <div className="absolute inset-0 h-full w-full rounded-xl bg-black/40 px-4 md:px-6 text-center text-slate-200   [backface-visibility:hidden]">
+                <div className="absolute inset-0 h-full w-full  rounded-xl bg-black/40 px-4 md:px-6 text-center text-slate-200   [backface-visibility:hidden]">
                     <div className="absolute inset-0">
                         <img
-                            className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
+                            className="h-full w-full mx-auto rounded-xl object-cover shadow-xl shadow-black/40"
                             src={url2}
                             alt="Front"
                         />

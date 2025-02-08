@@ -78,7 +78,7 @@ export default function Portfolio() {
                 </header>
             </div>
 
-            <section className="w-full md:max-w-[95vw] max-w-[90vw]  mx-auto -mt-20 py-12 px-6 bg-white rounded-lg shadow-xl shadow-slate-200 relative z-20">
+            <section className="w-full md:max-w-[95vw] max-w-[90vw]  mx-auto -mt-20 py-12 px-6 bg-white rounded-lg shadow-xl shadow-slate-200 relative z-20 ">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

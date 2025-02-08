@@ -4,9 +4,12 @@ import Flip from '../Flip';
 const Sec2 = () => {
 
     return (
-        <div className="max-w-6xl mx-auto mt-20 md:mt-36 mb-24 grid grid-cols-1 md:grid-cols-2 gap-5  px-4 sm:px-2">
+        <div className="max-w-6xl mx-auto mt-20 md:mt-36 mb-24 grid grid-cols-1 md:grid-cols-2 gap-5  px-4 sm:px-2   ">
 
-            <Flip />
+            <div className="w-full flex justify-center">
+                <Flip />
+            </div>
+
 
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8 mt-14  md:mt-0">
                 <div className="flex items-start justify-start space-x-1 gap-3 flex-col">
