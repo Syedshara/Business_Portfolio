@@ -3,9 +3,9 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navigation from "../components/Navigation";
-import Sec1 from "../components/sections/Sec1";
-import Sec2 from "../components/sections/Sec2";
+
 import img from "../assets/bg2.jpg";
+import Sections from "../components/Sections";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +41,7 @@ export default function Portfolio() {
     const sentence = "Material Kit 3";
 
     return (
-        <div className="relative min-h-screen bg-slate-200">
+        <div className="relative min-h-screen bg-slate-200 ">
             <Navigation />
             <div ref={heroRef} className="h-[400px] md:h-[600px]  bg-cover bg-center pt-4 relative z-0"
                 style={{ backgroundImage: `url(${img})` }}>
@@ -77,27 +77,9 @@ export default function Portfolio() {
                     </motion.p>
                 </header>
             </div>
+            <Sections />
 
-            <section className="w-full md:max-w-[95vw] max-w-[90vw]  mx-auto -mt-20 py-12 px-6 bg-white rounded-lg shadow-xl shadow-slate-200 relative z-20 ">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    viewport={{ once: false, amount: 0.2 }}
-                >
-                    <Sec1 />
-                </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    viewport={{ once: false, amount: 0.2 }}
-                    className="mt-10"
-                >
-                    <Sec2 />
-                </motion.div>
-            </section>
         </div>
     );
 }

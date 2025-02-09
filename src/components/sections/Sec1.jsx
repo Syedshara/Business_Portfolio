@@ -8,14 +8,14 @@ const Sec1 = () => {
                 <h2 className="text-5xl font-bold">
                     <Counter number={70} />+</h2>
                 <p className="text-2xl text-gray-600 mt-3 font-semibold">Coded Elements</p>
-                <span className="text-gray-800 font-thin text-sm mt-2 block">
+                <span className="text-gray-950 font-thin text-sm mt-2 block">
                     From buttons, to inputs, navbars, alerts or cards, you are covered
                 </span>
             </div>
             <div className="p-6">
                 <h2 className="text-5xl font-bold"><Counter number={15} />+</h2>
                 <p className="text-2xl text-gray-600 mt-3 font-semibold">Design Blocks</p>
-                <span className="text-gray-800 font-thin text-sm mt-2 block">
+                <span className="text-slate-950 font-thin text-sm mt-2 block">
                     Mix the sections, change the colors and unleash your creativity
                 </span>
 
@@ -23,7 +23,7 @@ const Sec1 = () => {
             <div className="p-6">
                 <h2 className="text-5xl font-bold"><Counter number={4} /></h2>
                 <p className="text-2xl text-gray-600 mt-3 font-semibold">Pages</p>
-                <span className="text-gray-800 font-thin text-sm mt-2 block">
+                <span className="text-slate-950 font-thin text-sm mt-2 block">
                     Save 3-4 weeks of work when you use our pre-made pages for your websit
                 </span>
             </div>
