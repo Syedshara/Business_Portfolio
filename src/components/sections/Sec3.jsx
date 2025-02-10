@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useMemo } from "react";
-import { Canvas } from "@react-three/fiber";
-import { TextureLoader, LinearFilter, Euler } from "three";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { TextureLoader, LinearFilter } from "three";
 import { ContactShadows } from "@react-three/drei";
 import { useSpring, a } from "@react-spring/three";
 import img from "./assets/bg2.jpg";
@@ -10,18 +10,13 @@ const images = [img, img, img, img];
 const RotatingCube = () => {
     const ref = useRef();
     const [index, setIndex] = useState(0);
+    const textures = useLoader(TextureLoader, images);
 
-    const textures = useMemo(() => {
-        return images.map((src) => {
-            const texture = new TextureLoader().load(src);
-            texture.minFilter = LinearFilter;
-            return texture;
-        });
-    }, []);
+    textures.forEach(texture => texture.minFilter = LinearFilter);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setIndex((prev) => (prev + 1) % 4);
+            setIndex(prev => (prev + 1) % 4);
         }, 3000);
         return () => clearInterval(interval);
     }, []);
@@ -33,7 +28,7 @@ const RotatingCube = () => {
 
     return (
         <a.mesh ref={ref} castShadow rotation={rotation}>
-            <boxGeometry args={[window.innerWidth < 768 ? 7 : 7, window.innerWidth < 768 ? 7 : 7, window.innerWidth < 768 ? 7 : 7]} />
+            <boxGeometry args={[window.innerWidth < 768 ? 5 : 7, window.innerWidth < 768 ? 5 : 7, window.innerWidth < 768 ? 5 : 7]} />
             <meshStandardMaterial attach="material-0" map={textures[0]} />
             <meshStandardMaterial attach="material-1" map={textures[1]} />
             <meshStandardMaterial attach="material-2" color="white" />
@@ -79,13 +74,12 @@ const ContentSection = () => {
 
 const Section = () => {
     return (
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 bg-gray-100 px-4 md:px-16 py-8 md:py-10">
+        <div className="max-w-full md:max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 bg-gray-100 px-4 md:px-16 py-8 md:py-10">
             <div className="w-full md:w-2/3 md:border-r md:pr-6">
                 <ContentSection />
             </div>
             <div className="w-full md:w-1/3 flex justify-center">
-                <div className="w-[300px] h-[300px] md:w-[350px] md:h-[350px]">
-
+                <div className="w-[250px] h-[250px] md:w-[350px] md:h-[350px]">
                     <Scene />
                 </div>
             </div>
