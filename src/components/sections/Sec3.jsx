@@ -28,7 +28,7 @@ const RotatingCube = () => {
 
     return (
         <a.mesh ref={ref} castShadow rotation={rotation}>
-            <boxGeometry args={[window.innerWidth < 768 ? 5 : 7, window.innerWidth < 768 ? 5 : 7, window.innerWidth < 768 ? 5 : 7]} />
+            <boxGeometry args={[window.innerWidth < 768 ? 7 : 7, window.innerWidth < 768 ? 7 : 7, window.innerWidth < 768 ? 7 : 7]} />
             <meshStandardMaterial attach="material-0" map={textures[0]} />
             <meshStandardMaterial attach="material-1" map={textures[1]} />
             <meshStandardMaterial attach="material-2" color="white" />
