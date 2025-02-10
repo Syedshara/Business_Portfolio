@@ -58,13 +58,13 @@ const Scene = () => {
 const ContentSection = () => {
     return (
         <div className="flex flex-col justify-center items-center md:items-center text-center md:max-w-1/2 w-full px-4 md:px-6">
-            <h1 className="text-2xl md:text-4xl font-bold">
+            <h1 className="text-xl md:text-4xl font-bold">
                 CREATE YOUR OWN PAGE
             </h1>
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-1 mt-2">
-                <span className="border border-orange-400 h-0 w-24 md:w-36"></span>
-                <span className="self-center text-3xl md:text-4xl text-orange-500">♦</span>
-                <span className="border border-orange-400 h-0 w-24 md:w-36"></span>
+                <span className="border border-orange-400 h-0 w-11 md:w-36"></span>
+                <span className="self-center text-2xl md:text-4xl text-orange-500">♦</span>
+                <span className="border border-orange-400 h-0 w-11 md:w-36"></span>
             </div>
 
             <p className="text-sm md:text-lg mt-4 md:mt-6 text-gray-600">
@@ -84,7 +84,8 @@ const Section = () => {
                 <ContentSection />
             </div>
             <div className="w-full md:w-1/3 flex justify-center">
-                <div className="w-[200px] h-[200px] md:w-[350px] md:h-[350px]">
+                <div className="w-[300px] h-[300px] md:w-[350px] md:h-[350px]">
+
                     <Scene />
                 </div>
             </div>
